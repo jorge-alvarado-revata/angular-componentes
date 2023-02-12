@@ -1,0 +1,13 @@
+<div [formGroup]="form">
+    <mat-form-field appearance="fill" class="full-width-input">
+        <textarea 
+        matInput 
+        placeholder="Ingrese texto"
+        #textarea 
+        formControlName="textarea" 
+        id="textarea" 
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="maxRow"
+        ></textarea>  
+    </mat-form-field>
+</div>
