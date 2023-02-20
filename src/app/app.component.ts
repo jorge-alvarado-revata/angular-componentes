@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  data: any;
   title = 'componentes';
+  loadFile(file:any){
+    this.data = file;
+  }
 }
 

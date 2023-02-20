@@ -5,10 +5,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material/angular-material.module'; 
 import { TextareaComponent} from './textarea/textarea.component';
+import { FileInputComponent } from './file-input/file-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FileInputComponent,
   ],
   imports: [
     BrowserModule,

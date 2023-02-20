@@ -1,0 +1,18 @@
+
+<label for="file">Input File</label>
+<input name="file"
+type="file"
+class="file-input"
+[accept]="requiredFileType"
+(change)="preview($event)"
+#fileUpload
+/>
+<button
+mat-raised-button
+color="primary"
+class="upload-btn"
+(click)="fileUpload.click()"
+>
+<mat-icon>attach_file</mat-icon>
+ADJUNTAR ARCHIVO
+</button>
