@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            Ejemplo componente file input
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <app-file-input
+        requiredFileType="image/png, .pdf, image/jpg, image/jpeg" 
+        (fileEvent)="loadFile($event)"
+        ></app-file-input>
+        <section>
+            <img [src]="data">
+        </section>
+    </mat-card-content>
+</mat-card>
