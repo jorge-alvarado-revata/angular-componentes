@@ -1,0 +1,13 @@
+.redlabel {
+    color: red;
+}
+
+.blacklabel {
+    color: black;
+}
+
+.full-width-input {
+    width: 98%;
+    align-content: center;
+    padding-left: 2%;
+}
