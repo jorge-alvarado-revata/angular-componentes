@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./showtextarea.component.css']
 })
 export class ShowtextareaComponent {
+  code = `<app-textarea
+  formControlName="mytextArea"
+  [minRow] = 5
+  [maxlength] = 250
+  >
+</app-textarea>`;
 
 }

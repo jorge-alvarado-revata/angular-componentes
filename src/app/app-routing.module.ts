@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FileInputComponent } from './componentes/file-input/file-input.component';
-import { TextareaComponent } from './componentes/textarea/textarea.component';
-import { CalendarAnualComponent } from './componentes/calendar-anual/calendar-anual.component';
+import { ShowtextareaComponent } from './show/showtextarea/showtextarea.component';
+import { ShowfileComponent } from './show/showfile/showfile.component';
+import { ShowcalendarComponent } from './show/showcalendar/showcalendar.component';
 const routes: Routes = [
 
-  {path:'textarea', component: TextareaComponent},
-  {path:'fileinput', component: FileInputComponent},
-  {path:'calendar', component: CalendarAnualComponent}
+  {path:'textarea', component: ShowtextareaComponent},
+  {path:'fileinput', component: ShowfileComponent},
+  {path:'calendar', component: ShowcalendarComponent}
 ];
 
 @NgModule({

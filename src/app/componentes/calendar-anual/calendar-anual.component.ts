@@ -15,18 +15,19 @@ export const YEAR_FORMATS =  {
     montYearAllyLabel: 'YYYY',
   }
 }
-
-@Component({
-  selector: 'app-calendar-anual',
-  templateUrl: './calendar-anual.component.html',
-  styleUrls: ['./calendar-anual.component.css'],
-  providers: [
-    {provide: MAT_DATE_LOCALE, useValue: 'es-PE'},
+/**
+ *  {provide: MAT_DATE_LOCALE, useValue: 'es-PE'},
     { 
       provide: DateAdapter, 
       useClass: MomentDateAdapter,
       deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS]
     },
+ */
+@Component({
+  selector: 'app-calendar-anual',
+  templateUrl: './calendar-anual.component.html',
+  styleUrls: ['./calendar-anual.component.css'],
+  providers: [
     {
       provide: MAT_DATE_FORMATS, useValue: YEAR_FORMATS
     },

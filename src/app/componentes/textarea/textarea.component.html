@@ -6,8 +6,12 @@
         #textarea 
         formControlName="textarea" 
         id="textarea" 
+        cdkTextareaAutosize
         cdkAutosizeMinRows="1"
-        cdkAutosizeMaxRows="maxRow"
+        
+        [maxlength]="maxlength"
+        [cdkAutosizeMinRows]="minRow"
+        [cdkAutosizeMaxRows]="maxRow"
         ></textarea>  
     </mat-form-field>
 </div>
