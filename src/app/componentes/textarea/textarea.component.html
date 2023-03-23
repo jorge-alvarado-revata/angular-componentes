@@ -12,6 +12,17 @@
         [maxlength]="maxlength"
         [cdkAutosizeMinRows]="minRow"
         [cdkAutosizeMaxRows]="maxRow"
-        ></textarea>  
+        >
+        </textarea>
+        <mat-error *ngIf="checkError()">
+            <div *ngIf="textError; then error else noerror"></div>
+            <ng-template #error>
+                {{ textError }}
+            </ng-template>
+            <ng-template #noerror>
+                Ingrese un valor
+            </ng-template>
+        </mat-error>
+
     </mat-form-field>
 </div>

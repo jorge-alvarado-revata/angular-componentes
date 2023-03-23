@@ -24,18 +24,14 @@ export class TextareaComponent implements OnInit, ControlValueAccessor {
   @Input() maxRow = 5;
   @Input() disabled: boolean = false;
   @Input() maxlength = 250;
+  @Input() textError: string = '';
  
   form: FormGroup;
 
   constructor(){
-    this.form = new FormGroup(
-      {textarea: new FormControl(
-        {
-          value: '', disabled: this.disabled
-        }
-      )}
-    )
-  }
+    this.form = new FormGroup({
+      textarea: new FormControl({value: '', disabled: this.disabled},Validators.required)})
+    }
 
   ngOnInit(): void {
 
@@ -63,8 +59,15 @@ export class TextareaComponent implements OnInit, ControlValueAccessor {
     this.form?.get('textarea')?.setValue(texto);
   }
 
-  onTouched =()=>{}
+  onTouched =()=>{
+    console.log('touche textarea');
+  }
 
+  checkError(){
+    let value = false;
+    value = this.form.get('textarea')?.errors?.['required'];
+    return value;
+  }
 }
 
 
