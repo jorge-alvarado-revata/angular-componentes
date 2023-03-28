@@ -1,0 +1,22 @@
+
+<mat-form-field appearance="fill" class="full-width-input">
+    <mat-label>{{name}}</mat-label>
+    <mat-select 
+    (selectionChange)="selectionChanged($event)"
+    (openedChange)='openChanged($event)'
+    [compareWith]="compareFn"
+    #matSelect>
+    <mat-option *ngFor="let option of data" [value]="option.id">
+        {{ option.nombre }}
+    </mat-option>
+    </mat-select>
+    <mat-error *ngIf="matSelect">
+        <div *ngIf="textError; then error else noerror"></div>
+        <ng-template #error>
+            {{ textError }}
+        </ng-template>
+        <ng-template #noerror>
+            Ingrese un valor
+        </ng-template>
+    </mat-error>
+</mat-form-field>

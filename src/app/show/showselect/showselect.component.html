@@ -1,0 +1,62 @@
+<mat-card>
+
+    <mat-card-header>
+        <mat-card-title>
+            Ejemplo componente Select List
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form (ngSubmit)="onSubmit()" #usuarioForm="ngForm">
+            <section>
+                <mat-form-field>
+                    <mat-label> Ingrese el Id del elemento</mat-label>
+                    <input matInput 
+                    placeholder="Ingrese el id" 
+                    [(ngModel)]="usuario.id" 
+                    required
+                    id="id" 
+                    name="id"
+                    #id="ngModel"
+                    >
+                    <div [hidden]="id.valid || id.pristine"
+                    class="alert alert-danger"></div>
+                </mat-form-field>
+            </section>
+            <section>
+                <mat-form-field>
+                    <mat-label> Ingrese el valor del elemento</mat-label>
+                    <input matInput 
+                    placeholder="Ingrese el valor"
+                    [(ngModel)]="usuario.nombre"
+                    required
+                    id="nombre"
+                    name="nombre"
+                    #nombre="ngModel"
+                    >
+                    <div [hidden]="nombre.valid || nombre.pristine"
+                    class="alert alert-danger"></div>
+                    
+                </mat-form-field>
+            </section>
+            <button type="submit" class="btn btn-success"
+            [disabled]="!usuarioForm.form.valid"
+            >Agregar</button>
+        </form>
+        <section>
+            <app-select
+            placeHolder="My select"
+            [data] = "myData"
+            name = "mySelect"
+            textError="Error en MySelect"
+            [disableControl] = false
+            (selectionChange)="selChange($event)"
+            (valueChange)="valChange($event)"
+            (openChange)="opChange($event)"
+            #mySelect
+            >
+    
+            </app-select>
+        </section>
+
+    </mat-card-content>
+</mat-card>

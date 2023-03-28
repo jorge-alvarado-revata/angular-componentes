@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule} from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,6 +13,8 @@ import { ShowtextareaComponent } from './show/showtextarea/showtextarea.componen
 import { ShowfileComponent } from './show/showfile/showfile.component';
 import { CalendarAnualComponent } from './componentes/calendar-anual/calendar-anual.component';
 import { ShowcalendarComponent } from './show/showcalendar/showcalendar.component';
+import { SelectComponent } from './componentes/select/select.component';
+import { ShowselectComponent } from './show/showselect/showselect.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +25,15 @@ import { ShowcalendarComponent } from './show/showcalendar/showcalendar.componen
     ShowfileComponent,
     CalendarAnualComponent,
     ShowcalendarComponent,
+    SelectComponent,
+    ShowselectComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule, 
+    CommonModule,
     AngularMaterialModule,
     TextareaComponent
   ],
