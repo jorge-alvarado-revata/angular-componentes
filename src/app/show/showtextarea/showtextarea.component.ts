@@ -12,11 +12,7 @@ formControlName="mytextArea"
 @Component({
   selector: 'app-showtextarea',
   templateUrl: './showtextarea.component.html',
-  styleUrls: ['./showtextarea.component.css'],
-  viewProviders: [
-    { provide: ControlContainer, useExisting: FormGroupDirective }
-  ],
-  providers: [FormGroupDirective]
+  styleUrls: ['./showtextarea.component.css']
 })
 export class ShowtextareaComponent implements OnInit {
 
@@ -25,8 +21,6 @@ export class ShowtextareaComponent implements OnInit {
   code: string = '';
 
   constructor(
-    private parent: FormGroupDirective,
-    private fb: FormBuilder
   ){
     
   }

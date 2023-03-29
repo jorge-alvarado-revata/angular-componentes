@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            Ejemplo de Table
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <app-table 
+        titulo="USUARIOS"
+        [columns]="columnsMatriz"
+        [dataSource]="dataMatriz"
+        nameTable="matrizUsuarios"
+        (addRow)="addElemento($event)"
+        (editRow)="editElemento($event)"
+        (deleteRow)="deleteElemento($event)"
+        #tableUser
+        ></app-table>
+    </mat-card-content>
+</mat-card>

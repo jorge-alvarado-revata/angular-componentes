@@ -1,7 +1,15 @@
 .ng-valid[required], .ng-valid.required  {
-    border-left: 5px solid #42A948; /* green */
+    border-right: 5px solid #42A948; /* green */
   }
   
 .ng-invalid:not(form)  {
-    border-left: 5px solid #a94442; /* red */
+    border-right: 5px solid #a94442; /* red */
+}
+
+.full-width {
+    width: 100%;
+}
+
+.separador {
+  padding-top: 10px;
 }

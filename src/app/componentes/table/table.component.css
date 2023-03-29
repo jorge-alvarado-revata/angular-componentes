@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+  }
+
+.mat-column-accion {
+    flex: none;
+    width: 240px;
+}
+
+.mat-header-cell {    
+  text-align: center;
+  white-space:pre-wrap;    
+}
+
+.mat-cell {
+  text-align: center;
+}

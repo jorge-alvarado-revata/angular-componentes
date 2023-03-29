@@ -15,6 +15,10 @@ import { CalendarAnualComponent } from './componentes/calendar-anual/calendar-an
 import { ShowcalendarComponent } from './show/showcalendar/showcalendar.component';
 import { SelectComponent } from './componentes/select/select.component';
 import { ShowselectComponent } from './show/showselect/showselect.component';
+import { TableComponent } from './componentes/table/table.component';
+import { ShowTableComponent } from './show/show-table/show-table.component';
+import { InputChipComponent } from './componentes/input-chip/input-chip.component';
+import { ShowInputChipComponent } from './show/show-input-chip/show-input-chip.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +31,10 @@ import { ShowselectComponent } from './show/showselect/showselect.component';
     ShowcalendarComponent,
     SelectComponent,
     ShowselectComponent,
+    TableComponent,
+    ShowTableComponent,
+    InputChipComponent,
+    ShowInputChipComponent
   ],
   imports: [
     BrowserModule,

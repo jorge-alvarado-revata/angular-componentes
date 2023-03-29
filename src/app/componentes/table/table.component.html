@@ -1,0 +1,41 @@
+<mat-card>
+    <mat-card-title>
+      <div *ngIf="titulo">
+        <mat-label>{{titulo}}</mat-label>
+      </div>
+    </mat-card-title>
+    <mat-card-subtitle>{{subtitulo}}</mat-card-subtitle>
+    <mat-card-content>
+      <div fxLayout.lg="row" fxLayout.xl="row" fxLayout.md="row" fxLayout="column" fxLayoutAlign="end end" fxLayoutGap="30px">
+        <button mat-flat-button color="primary" (click)="addRegistro()"><mat-icon>add</mat-icon>Agregar</button>
+      </div>
+      <div fxLayout.lg="row" fxLayout.xl="row" fxLayout.md="row" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="30px">
+        <div fxFlex="100">
+          <table 
+      mat-table #myTable
+      [dataSource]="dataSource" 
+      class="mat-elevation-z8">
+          <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+              <th mat-header-cell *matHeaderCellDef>
+                  {{column.header}}
+                </th>
+                <td mat-cell *matCellDef="let row">
+                  <ng-template [ngIf]="column.columnDef=='accion'">
+                    <button mat-icon-button (click)="editRegistro(row)" matTooltip="Editar"><mat-icon>edit</mat-icon></button>
+                    <button mat-icon-button (click)="deleteRegistro(row)" matTooltip="Eliminar"><mat-icon>delete</mat-icon></button>
+                  </ng-template>
+                  <ng-template [ngIf]="column.columnDef!='accion' && column.cell != undefined">
+                    {{column.cell(row, column.columnDef)}}
+                  </ng-template>
+                </td>  
+          </ng-container>
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+        </div>
+      </div>
+      
+    </mat-card-content>
+  </mat-card>
+  

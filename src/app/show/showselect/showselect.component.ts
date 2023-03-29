@@ -10,6 +10,7 @@ import { SelectComponent } from 'src/app/componentes/select/select.component';
 })
 export class ShowselectComponent {
   myData: IDataSelect[] = [];
+  mySelectedData: string[]=[];
   usuario: IUsuario = {} as IUsuario;
   @ViewChild('mySelect', {static: false}) mySelect!: SelectComponent;
   submitted = false;
@@ -23,7 +24,15 @@ export class ShowselectComponent {
   }
 
   selChange(event: any){
-    console.log(event);
+    if (event!=undefined){
+      if(event.value != ''){
+        let element: IDataSelect | undefined = this.myData.find(ele=>ele.id === event.value);
+        if (element != undefined){
+          let valueChip = `${element.id}-${element.nombre}`;
+          this.mySelectedData.push(valueChip);
+        }
+      }
+    }
   }
 
   valChange(event: any){
@@ -34,7 +43,4 @@ export class ShowselectComponent {
     console.log(event);
   }
 
-  add(event:any){
-
-  }
 }

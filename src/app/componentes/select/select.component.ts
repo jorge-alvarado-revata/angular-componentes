@@ -48,8 +48,9 @@ export class SelectComponent {
   writeValue(_value: any) {
     if (this.matSelect != undefined){
       if (_value != null || _value != ''){
-        if (!this.data.find(ele=>ele.id = _value.id)){
-          this.data.push(_value);
+        let newElement: IDataSelect = { id: _value.id, nombre: _value.nombre};
+        if (!this.data.find(ele=>ele.id === _value.id)){
+          this.data.push(newElement);
         }
       }  
     }

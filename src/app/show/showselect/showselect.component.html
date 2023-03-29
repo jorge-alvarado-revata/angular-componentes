@@ -8,7 +8,7 @@
     <mat-card-content>
         <form (ngSubmit)="onSubmit()" #usuarioForm="ngForm">
             <section>
-                <mat-form-field>
+                <mat-form-field class="full-width">
                     <mat-label> Ingrese el Id del elemento</mat-label>
                     <input matInput 
                     placeholder="Ingrese el id" 
@@ -23,7 +23,7 @@
                 </mat-form-field>
             </section>
             <section>
-                <mat-form-field>
+                <mat-form-field class="full-width">
                     <mat-label> Ingrese el valor del elemento</mat-label>
                     <input matInput 
                     placeholder="Ingrese el valor"
@@ -38,10 +38,16 @@
                     
                 </mat-form-field>
             </section>
-            <button type="submit" class="btn btn-success"
-            [disabled]="!usuarioForm.form.valid"
-            >Agregar</button>
+
+            <section>
+                <button mat-flat-button color="primary" type="submit" 
+                [disabled]="!usuarioForm.form.valid"
+                >Agregar</button>
+            </section>
         </form>
+        <section class="separador">
+
+        </section>
         <section>
             <app-select
             placeHolder="My select"
@@ -56,6 +62,15 @@
             >
     
             </app-select>
+        </section>
+        <section>
+            <mat-chip-listbox
+            class="mat-mdc-chip-set-stacked" aria-label="Color selection"
+            >
+            <mat-chip-option *ngFor="let chip of mySelectedData" selected>
+                {{chip}}
+            </mat-chip-option>
+            </mat-chip-listbox>
         </section>
 
     </mat-card-content>

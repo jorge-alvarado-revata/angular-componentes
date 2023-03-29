@@ -1,0 +1,39 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            {{ titulo }}
+        </mat-card-title>
+        
+    </mat-card-header>
+
+    <mat-card-content>
+        <section>
+            <mat-form-field appearance="fill" class="full-width-input">
+                <mat-label>{{ titulotext }}</mat-label>
+                    <input
+                    matInput 
+                    [(ngModel)]="nombre"
+                    required 
+                    type="text" 
+                    [placeholder]="placeholder"
+                    (blur)="setValor()" 
+                    #inputValor="ngModel">
+            </mat-form-field>
+        </section>
+        <section>
+            <mat-chip-listbox class="mat-chip-list-stacked">
+                <mat-chip 
+                *ngFor="let elemento of ListaElementos" selected 
+                color="primary"
+                (removed)="removeElemento(elemento)"
+                >
+                {{elemento}}
+                <span class="spacer"></span>
+                <button matChipRemove>
+                    <mat-icon>cancel</mat-icon>
+                </button>
+                </mat-chip>
+            </mat-chip-listbox>
+        </section>
+    </mat-card-content>
+</mat-card>
