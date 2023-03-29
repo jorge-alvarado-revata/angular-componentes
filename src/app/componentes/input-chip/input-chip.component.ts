@@ -11,10 +11,12 @@ export class InputChipComponent {
   @Input() titulo: string= '';
   @Input() titulotext: string = '';
   @Input() placeholder: string = '';
-  @ViewChild('inputValor') inputValor!: ElementRef;
   nombre: string = '';
   ListaElementos: string[]=[];
 
+  constructor(){
+
+  }
   setValor(){
 if (this.nombre != ''){
   if (!this.ListaElementos.includes(this.nombre)){

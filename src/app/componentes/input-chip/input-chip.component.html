@@ -14,11 +14,15 @@
                     matInput 
                     [(ngModel)]="nombre"
                     required 
-                    type="text" 
                     [placeholder]="placeholder"
-                    (blur)="setValor()" 
-                    #inputValor="ngModel">
+                    pattern ="[a-zA-Z0-9\s]*"
+                    #inputValor="ngModel" 
+                    >
             </mat-form-field>
+            <button mat-flat-button color="primary" (click)="setValor()" [disabled]="inputValor.hasError('pattern')">Agregar</button>
+            <mat-error *ngIf="inputValor.hasError('pattern')">
+                Ingrese un valor alfanumerico.
+            </mat-error>
         </section>
         <section>
             <mat-chip-listbox class="mat-chip-list-stacked">
